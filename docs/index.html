@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MESP - L'entraînement pompier réinventé</title>
+  <meta name="description" content="Découvrez MESP, l'application d'entraînement moderne pour les sapeurs-pompiers. Activez vos tablettes et gérez vos licences simplement.">
+  <link rel="stylesheet" href="style.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Header / Navigation -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <div class="brand">
+        <img src="logo.png" alt="MESP Logo" class="brand-logo">
+        <span class="brand-name">MESP</span>
+      </div>
+      <nav class="nav-links">
+        <a href="#features">Fonctionnalités</a>
+        <a href="#pricing">Tarifs</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div class="nav-cta">
+        <a href="#pricing" class="btn btn-primary">Acheter une licence</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container hero-container">
+      <div class="hero-content">
+        <span class="badge">Disponible sur Android</span>
+        <h1>L'entraînement pompier réinventé.</h1>
+        <p class="hero-subtitle">
+          MESP est l'application d'entraînement nouvelle génération conçue pour les sapeurs-pompiers. Simulez, analysez et progressez, même en situation d'urgence et sans connexion internet.
+        </p>
+        <div class="hero-actions">
+          <a href="#pricing" class="btn btn-primary btn-large">Obtenir des clés de licence</a>
+          <a href="https://play.google.com/store" target="_blank" class="btn btn-secondary btn-large">
+            <span class="play-icon">🤖</span> Télécharger sur Google Play
+          </a>
+        </div>
+      </div>
+      <div class="hero-image-container">
+        <!-- Conteneur pour afficher une capture d'écran de l'app ou le logo en grand -->
+        <div class="app-mockup">
+          <img src="logo.png" alt="MESP Logo Large" class="hero-app-logo">
+          <div class="mockup-overlay">MESP App</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="features">
+    <div class="container">
+      <div class="section-header">
+        <h2>Conçu pour le terrain</h2>
+        <p>Une technologie robuste et simple pour répondre aux exigences des pompiers.</p>
+      </div>
+      
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">📷</div>
+          <h3>Mode Capture Photo</h3>
+          <p>Prenez des photos de vos zones de manœuvre et intégrez-les directement dans vos scénarios d'entraînement.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">☁️</div>
+          <h3>Fonctionnement Hors-Ligne</h3>
+          <p>Pas de réseau en sous-sol ou en forêt ? Aucun problème. L'application valide vos licences 100% hors-ligne après activation.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">🔑</div>
+          <h3>Gestion de Flotte B2B</h3>
+          <p>Les SDIS peuvent acheter des lots de licences (ex: 20, 50 tablettes) avec une seule clé d'activation et gérer leur parc facilement.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section id="pricing" class="pricing">
+    <div class="container">
+      <div class="section-header">
+        <h2>Des tarifs simples et transparents</h2>
+        <p>Activez vos tablettes de manière autonome en quelques minutes.</p>
+      </div>
+
+      <div class="pricing-grid">
+        <!-- Offre Individuelle -->
+        <div class="price-card">
+          <div class="card-badge">Populaire</div>
+          <h3>Licence Individuelle</h3>
+          <div class="price">10<span>€</span><span class="price-period">/ tablette</span></div>
+          <p class="price-desc">Idéal pour les pompiers individuels souhaitant s'entraîner sur leur tablette personnelle.</p>
+          <hr>
+          <ul class="price-features">
+            <li><strong>1 Clé d'activation</strong> unique</li>
+            <li>Valable pour <strong>1 appareil</strong></li>
+            <li>Mises à jour gratuites à vie</li>
+            <li>Fonctionnement 100% hors-ligne</li>
+            <li>Support par e-mail</li>
+          </ul>
+          <!-- REMPLACER PAR VOTRE LIEN DE PAIEMENT STRIPE REEL -->
+          <a href="https://buy.stripe.com/9B628u1rA7mMeUN9IeafS00" target="_blank" class="btn btn-primary btn-full">Acheter une clé</a>
+        </div>
+
+        <!-- Offre SDIS (Lots) -->
+        <div class="price-card price-card-sdis">
+          <h3>Offre SDIS / Groupements</h3>
+          <div class="price">Sur mesure</div>
+          <p class="price-desc">Pour équiper les casernes ou l'ensemble d'un département avec une gestion centralisée.</p>
+          <hr>
+          <ul class="price-features">
+            <li><strong>1 Clé unique</strong> pour toute votre flotte</li>
+            <li>Volume ajustable (ex: 10, 50, 100 tablettes)</li>
+            <li>Transfert de licence en cas de matériel cassé</li>
+            <li>Paiement par mandat administratif (Chorus Pro)</li>
+            <li>Support technique prioritaire</li>
+          </ul>
+          <a href="mailto:contact@votre-domaine.fr?subject=Demande de devis MESP SDIS" class="btn btn-secondary btn-full">Demander un devis</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="faq">
+    <div class="container">
+      <div class="section-header">
+        <h2>Questions Fréquentes</h2>
+        <p>Tout ce que vous devez savoir sur le fonctionnement des licences de MESP.</p>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <h4>Comment fonctionne l'activation ?</h4>
+          <p>Après votre paiement sur Stripe, vous recevrez immédiatement une clé d'activation par e-mail. Saisissez cette clé au démarrage de l'application sur votre tablette connectée à internet pour la déverrouiller définitivement.</p>
+        </div>
+
+        <div class="faq-item">
+          <h4>L'application a-t-elle besoin d'internet en permanence ?</h4>
+          <p>Non. MESP est conçue pour le terrain. Internet est nécessaire uniquement pour la première activation. Ensuite, l'application valide la licence localement de façon cryptographique et reste opérationnelle 100% hors-ligne.</p>
+        </div>
+
+        <div class="faq-item">
+          <h4>Que se passe-t-il si ma tablette est cassée ou remplacée ?</h4>
+          <p>Les licences sont transférables. Il vous suffit de nous contacter ou d'utiliser le portail d'administration pour détacher la licence de l'ancienne tablette afin de pouvoir l'activer sur la nouvelle.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <span class="brand-name">MESP</span>
+        <p>L'application d'entraînement tactique pour sapeurs-pompiers.</p>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 MESP. Tous droits réservés.
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
