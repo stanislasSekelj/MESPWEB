@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>OG image source — screenshot at 1200×630 (see og.mjs)</title>
+<link rel="stylesheet" href="../css/site.css">
+<style>
+  body { width: 1200px; height: 630px; overflow: hidden; position: relative; }
+  .sc { position: absolute; inset: 0; overflow: hidden; }
+  .sc .w { position: absolute; left: 0; top: 0; width: 1600px; height: 1000px; transform-origin: 0 0; transform: translate(30px, -115px) scale(.82); }
+  .sc img { position: absolute; max-width: none; }
+  .shade { position: absolute; inset: 0; background: linear-gradient(90deg, #12100e 0, #12100e 30%, rgba(18, 16, 14, 0) 62%); }
+  .txt { position: absolute; left: 56px; top: 56px; bottom: 56px; display: grid; align-content: space-between; }
+  h1 { font-size: 104px; }
+  .brand strong { font-size: 44px; }
+</style>
+</head>
+<body>
+  <div class="sc">
+    <div class="w">
+      <img src="../assets/img/scene.webp" width="1600" height="1000" alt="" style="left:0;top:0">
+      <img src="../assets/fx/smoke-2.poster.webp" alt="" style="left:645px;top:-56px;width:380px">
+      <img src="../assets/fx/fire-door-2.poster.webp" alt="" style="left:672px;top:375px;width:135px">
+      <img src="../assets/fx/fire-ground-2.poster.webp" alt="" style="left:885px;top:431px;width:450px">
+      <div class="mask" style="clip-path:polygon(891px 684px,1321px 674px,1335px 690px,1345px 812px,905px 826px,900px 700px)"></div>
+    </div>
+  </div>
+  <div class="shade"></div>
+  <div class="txt">
+    <span class="brand"><strong>MESP</strong><span>PompierMES · Android</span></span>
+    <h1 class="display">Photographiez<br>le lieu.<br>Posez le feu.</h1>
+    <p class="label"><b>Mises en situation</b> pour formateurs sapeurs-pompiers</p>
+  </div>
+</body>
+</html>

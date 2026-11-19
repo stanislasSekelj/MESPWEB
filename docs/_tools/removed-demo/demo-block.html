@@ -1,0 +1,75 @@
+    <div class="demo" id="demo" aria-labelledby="demo-title">
+      <div class="demo-bar">
+        <h2 class="label" id="demo-title"><b>Aperçu interactif</b> — version web simplifiée</h2>
+      </div>
+
+      <div class="stage-wrap">
+        <div class="stage" id="stage" role="group" aria-label="Scène de démonstration : déplacez, agrandissez et tournez les effets" aria-describedby="demo-help">
+          <div class="world" id="world">
+            <img class="bg" src="assets/img/scene.webp" width="1600" height="1000" alt="Illustration provisoire d'un bâtiment d'entraînement de nuit, avec une porte, des fenêtres et un muret au premier plan" fetchpriority="high">
+            <div class="items" id="items"></div>
+            <div class="mask" id="mask"></div>
+            <div class="overlay" id="overlay">
+              <svg class="mask-edit" id="mask-edit" viewBox="0 0 1600 1000" aria-hidden="true" hidden><polygon/></svg>
+              <div class="mask-pts" id="mask-pts" hidden></div>
+              <div class="frame" id="frame" hidden>
+                <span class="frame-stem"></span>
+                <button class="handle handle--rot" type="button" data-handle="rot" aria-label="Tourner l'élément (glisser, ou flèches gauche et droite)"></button>
+                <button class="handle handle--del" type="button" data-handle="del" aria-label="Supprimer l'élément"></button>
+                <button class="handle handle--scale" type="button" data-handle="scale" aria-label="Changer la taille de l'élément (glisser, ou flèches haut et bas)"></button>
+              </div>
+            </div>
+          </div>
+          <p class="label stage-tag">Décor illustré provisoire</p>
+          <p class="stage-hint" id="stage-hint" aria-hidden="true">Touchez un effet, puis déplacez-le</p>
+        </div>
+      </div>
+
+      <div class="tray" id="tray">
+        <div class="tabs" role="tablist" aria-label="Catégories d'éléments" id="tabs"></div>
+        <div id="tray-lists"></div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-group">
+          <p class="label">Élément sélectionné</p>
+          <p class="label readout" id="readout" aria-live="polite">Aucun</p>
+          <div class="panel-row" role="group" aria-label="Actions sur l'élément sélectionné">
+            <button class="chip chip--icon" type="button" data-act="smaller" aria-label="Réduire" disabled>−</button>
+            <button class="chip chip--icon" type="button" data-act="bigger" aria-label="Agrandir" disabled>+</button>
+            <button class="chip chip--icon" type="button" data-act="ccw" aria-label="Tourner vers la gauche" disabled>↺</button>
+            <button class="chip chip--icon" type="button" data-act="cw" aria-label="Tourner vers la droite" disabled>↻</button>
+            <button class="chip" type="button" data-act="del" disabled>Supprimer</button>
+          </div>
+          <p id="demo-help">Touchez un élément pour le sélectionner, puis faites-le glisser. Coin carré&nbsp;: taille. Rond&nbsp;: rotation. Deux doigts&nbsp;: taille et rotation. Au clavier&nbsp;: flèches, <kbd>+</kbd> <kbd>−</kbd>, <kbd>R</kbd>, <kbd>Suppr</kbd>.</p>
+        </div>
+
+        <div class="panel-group">
+          <p class="label">Masque</p>
+          <div class="panel-row">
+            <button class="chip" type="button" id="mask-toggle" aria-pressed="true"><span class="switch" aria-hidden="true"></span>Masque sur le muret</button>
+            <button class="chip" type="button" id="mask-edit-toggle" aria-pressed="false">Modifier le contour</button>
+          </div>
+          <p><strong>Coupez le masque&nbsp;:</strong> le feu repasse devant le muret. Un masque cache ce qui est dessous, et l'effet semble brûler derrière un élément réel de la photo.</p>
+        </div>
+
+        <div class="panel-group">
+          <p class="label" id="tint-label">Teinte de la fumée</p>
+          <div class="panel-row" role="radiogroup" aria-labelledby="tint-label" id="tints">
+            <button class="chip" type="button" role="radio" aria-checked="true" data-tint="" style="--c:#9a938a"><i></i>Naturelle</button>
+            <button class="chip" type="button" role="radio" aria-checked="false" data-tint="vert" style="--c:#7fbf3a"><i></i>Vert toxique</button>
+            <button class="chip" type="button" role="radio" aria-checked="false" data-tint="jaune" style="--c:#d9b23a"><i></i>Jaune</button>
+            <button class="chip" type="button" role="radio" aria-checked="false" data-tint="noir" style="--c:#2a2623"><i></i>Noire</button>
+          </div>
+          <p>Exemples de teintes. Dans l'app, le filtre couleur colorise la fumée blanche et vous enregistrez vos propres préréglages.</p>
+        </div>
+
+        <div class="panel-group">
+          <div class="panel-row">
+            <button class="btn" type="button" id="reset">Réinitialiser la scène</button>
+          </div>
+          <p>Les gestes et les boutons de cet aperçu sont propres au site&nbsp;; l'app Android a sa propre interface. <strong>L'app complète offre aussi</strong> les zones d'eau, les réglages d'animation, les calques et l'export vidéo.</p>
+        </div>
+      </div>
+    </div>
+    <noscript><p class="fine">L'aperçu interactif nécessite JavaScript. Le reste de la page se lit sans.</p></noscript>

@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="1600" height="1000">
+  <!-- PLACEHOLDER source: illustrated training ground, rasterised to assets/img/scene.webp (see README). Replace with a real photo when available.
+       The low wall (muret) polygon is 900,700 1335,690 1345,812 905,826 — the demo mask in js/demo.js traces it. -->
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0d0b0a"/>
+      <stop offset="1" stop-color="#231e1a"/>
+    </linearGradient>
+    <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#26211d"/>
+      <stop offset="1" stop-color="#14110f"/>
+    </linearGradient>
+    <linearGradient id="facade" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4a433d"/>
+      <stop offset="1" stop-color="#352f2a"/>
+    </linearGradient>
+    <linearGradient id="soot" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#0c0a09" stop-opacity=".85"/>
+      <stop offset="1" stop-color="#0c0a09" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="wallTop" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#6a6159"/>
+      <stop offset="1" stop-color="#5a524b"/>
+    </linearGradient>
+    <linearGradient id="wallFace" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4d463f"/>
+      <stop offset="1" stop-color="#37312c"/>
+    </linearGradient>
+    <radialGradient id="lamp" cx=".5" cy="0" r="1">
+      <stop offset="0" stop-color="#ffd9a3" stop-opacity=".22"/>
+      <stop offset="1" stop-color="#ffd9a3" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1600" height="640" fill="url(#sky)"/>
+  <rect y="640" width="1600" height="360" fill="url(#ground)"/>
+
+  <!-- distant hangar -->
+  <path d="M0 520h250l40-26h60v146H0z" fill="#1b1714"/>
+  <path d="M1380 500h220v140h-220z" fill="#1a1613"/>
+  <path d="M1420 470h6v170h-6z" fill="#2a2420"/>
+
+  <!-- tower volume -->
+  <rect x="330" y="60" width="240" height="580" fill="#3b3530"/>
+  <rect x="330" y="60" width="240" height="14" fill="#514941"/>
+  <g fill="#0c0a09">
+    <rect x="405" y="120" width="90" height="110"/>
+    <rect x="405" y="290" width="90" height="110"/>
+    <rect x="405" y="460" width="90" height="110"/>
+  </g>
+  <g fill="url(#soot)">
+    <rect x="395" y="70" width="110" height="52"/>
+    <rect x="395" y="236" width="110" height="56"/>
+  </g>
+
+  <!-- main facade -->
+  <rect x="570" y="150" width="760" height="490" fill="url(#facade)"/>
+  <rect x="570" y="150" width="760" height="16" fill="#5b524a"/>
+  <g stroke="#2b2622" stroke-width="2">
+    <path d="M570 248h760M570 346h760M570 444h760M570 542h760"/>
+    <path d="M760 150v490M950 150v490M1140 150v490" stroke-opacity=".6"/>
+  </g>
+  <g fill="#211d1a">
+    <circle cx="600" cy="200" r="4"/><circle cx="730" cy="200" r="4"/><circle cx="790" cy="200" r="4"/><circle cx="920" cy="200" r="4"/>
+    <circle cx="980" cy="200" r="4"/><circle cx="1110" cy="200" r="4"/><circle cx="1170" cy="200" r="4"/><circle cx="1300" cy="200" r="4"/>
+    <circle cx="600" cy="396" r="4"/><circle cx="730" cy="396" r="4"/><circle cx="980" cy="396" r="4"/><circle cx="1300" cy="396" r="4"/>
+  </g>
+
+  <!-- soot above openings -->
+  <g fill="url(#soot)">
+    <rect x="768" y="162" width="124" height="60"/>
+    <rect x="1070" y="162" width="124" height="60"/>
+    <rect x="655" y="310" width="170" height="92"/>
+  </g>
+  <!-- openings -->
+  <g fill="#090807">
+    <rect x="780" y="220" width="100" height="120"/>
+    <rect x="1082" y="220" width="100" height="120"/>
+    <rect x="670" y="400" width="140" height="240"/>
+    <rect x="1060" y="430" width="150" height="110"/>
+  </g>
+  <!-- opening reveals -->
+  <g fill="#2a2521">
+    <rect x="780" y="334" width="100" height="6"/>
+    <rect x="1082" y="334" width="100" height="6"/>
+    <rect x="1060" y="534" width="150" height="6"/>
+    <rect x="664" y="394" width="152" height="6"/>
+  </g>
+  <!-- steel door leaf, ajar -->
+  <path d="M810 400l34 14v226h-34z" fill="#5a2a20"/>
+  <path d="M810 400l34 14v226h-34z" fill="none" stroke="#2b1612" stroke-width="2"/>
+
+  <!-- wall lamp + pool of light -->
+  <rect x="938" y="372" width="24" height="10" fill="#8a7f73"/>
+  <path d="M800 382h300l120 258H680z" fill="url(#lamp)"/>
+
+  <!-- downpipe, signage plate -->
+  <rect x="1296" y="166" width="10" height="474" fill="#2c2723"/>
+  <rect x="596" y="470" width="44" height="60" fill="#c9c1b6"/>
+  <rect x="602" y="476" width="32" height="6" fill="#8d2a1c"/>
+  <g fill="#6d655c"><rect x="602" y="490" width="32" height="3"/><rect x="602" y="498" width="26" height="3"/><rect x="602" y="506" width="30" height="3"/></g>
+
+  <!-- ground: kerb, joints, markings -->
+  <rect x="0" y="636" width="1600" height="8" fill="#3a342f"/>
+  <g stroke="#2e2924" stroke-width="2" fill="none">
+    <path d="M0 700h1600M0 790h1600M0 900h1600" stroke-opacity=".7"/>
+    <path d="M800 644L640 1000M800 644l160 356M800 644L160 1000M800 644l640 356" stroke-opacity=".5"/>
+  </g>
+  <path d="M120 860l260-60 18 16-262 66z" fill="#b9b1a5" fill-opacity=".28"/>
+  <path d="M160 940l330-78 20 18-330 84z" fill="#b9b1a5" fill-opacity=".2"/>
+
+  <!-- hydrant bollard -->
+  <rect x="470" y="690" width="26" height="90" rx="4" fill="#8d2a1c"/>
+  <rect x="464" y="706" width="38" height="10" fill="#6f2016"/>
+  <ellipse cx="483" cy="782" rx="30" ry="6" fill="#0d0b0a" fill-opacity=".6"/>
+
+  <!-- low wall (muret) — the mask target -->
+  <path d="M905 826l440-14 22 26-446 16z" fill="#0b0908" fill-opacity=".55"/>
+  <path d="M900 700l435-10 10 122-440 14z" fill="url(#wallFace)"/>
+  <path d="M900 700l435-10-14-16-430 10z" fill="url(#wallTop)"/>
+  <g stroke="#2a2521" stroke-width="2" fill="none">
+    <path d="M1045 697l3 125M1190 693l4 124"/>
+    <path d="M900 700l435-10" stroke="#7a7067"/>
+  </g>
+</svg>

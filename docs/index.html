@@ -1,177 +1,369 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MESP est l'application d'entraînement conçue pour les sapeurs-pompiers. Simulez, analysez et progressez, même en situation d'urgence et sans connexion internet.</title>
-  <meta name="description" content="Découvrez MESP, l'application d'entraînement moderne pour les sapeurs-pompiers. Activez vos tablettes et gérez vos licences simplement.">
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/png" href="logo.png?v=1">
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MESP (PompierMES) — Mises en situation animées pour formateurs sapeurs-pompiers</title>
+<meta name="description" content="MESP est l'application Android des formateurs sapeurs-pompiers : photographiez le site de manœuvre, posez du feu, de la fumée et des explosions animés sur la photo, exportez la scène en vidéo. Fonctionne sans réseau après activation.">
+<link rel="canonical" href="https://mespapp.com/">
+<meta name="theme-color" content="#12100e">
+<link rel="icon" href="favicon.ico" sizes="32x32">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/img/icon-192.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="MESP">
+<meta property="og:url" content="https://mespapp.com/">
+<meta property="og:title" content="MESP — Photographiez le lieu. Posez le feu.">
+<meta property="og:description" content="L'application Android des formateurs sapeurs-pompiers : feu, fumée et explosions animés sur la photo de votre site de manœuvre.">
+<meta property="og:image" content="https://mespapp.com/assets/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="MESP — Photographiez le lieu. Posez le feu.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="MESP — Photographiez le lieu. Posez le feu.">
+<meta name="twitter:description" content="L'application Android des formateurs sapeurs-pompiers : feu, fumée et explosions animés sur la photo de votre site de manœuvre.">
+<meta name="twitter:image" content="https://mespapp.com/assets/img/og.jpg">
+<link rel="preload" href="assets/fonts/big-shoulders-display-latin-800.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/ibm-plex-sans-latin-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/site.css">
+<script>document.documentElement.classList.add('js')</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "PompierMES",
+  "alternateName": "MESP",
+  "operatingSystem": "Android",
+  "inLanguage": ["fr", "en"],
+  "url": "https://mespapp.com/",
+  "installUrl": "https://play.google.com/store/apps/details?id=com.pompiermes.app",
+  "description": "Application Android pour formateurs sapeurs-pompiers : création de mises en situation en posant des effets animés (feu, fumée, explosions) sur une photo du site de manœuvre, avec export vidéo MP4."
+}
+</script>
 </head>
 <body>
+<a class="skip" href="#contenu">Aller au contenu</a>
 
-  <!-- Header / Navigation -->
-  <header class="navbar">
-    <div class="container nav-container">
-      <div class="brand">
-        <img src="logo.png" alt="MESP Logo" class="brand-logo">
-        <span class="brand-name">MESP</span>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="./" aria-label="MESP — accueil"><strong>MESP</strong></a>
+    <nav class="nav" aria-label="Navigation principale">
+      <a class="nav-wide" href="#fonctionnement">Fonctionnement</a>
+      <a href="#tarifs">Tarifs</a>
+      <a href="#faq">FAQ</a>
+      <a class="nav-cta" href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="contenu">
+
+<!-- ═══ HERO + DEMO ═══ -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-top">
+      <p class="label"><b>Android</b> · téléphones et tablettes · pour formateurs sapeurs-pompiers</p>
+      <h1 class="display"><span>Photographiez le lieu.</span><span class="lit">Posez le feu.</span></h1>
+      <p class="hero-lede"><strong>MESP</strong> — PompierMES sur Google Play — sert à préparer vos mises en situation&nbsp;: une photo du site de manœuvre, puis du feu, de la fumée, des explosions, des victimes et de l'eau posés dessus. La scène se montre aux stagiaires ou s'exporte en vidéo.</p>
+    </div>
+  </div>
+
+  <!-- colour filters for the smoke tint (luminance → tint) -->
+  <svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute">
+    <filter id="tint-vert" color-interpolation-filters="sRGB"><feColorMatrix values=".13 .43 .04 0 0  .23 .76 .08 0 0  .06 .21 .02 0 0  0 0 0 1 0"/></filter>
+    <filter id="tint-jaune" color-interpolation-filters="sRGB"><feColorMatrix values=".26 .87 .09 0 0  .21 .70 .07 0 0  .06 .20 .02 0 0  0 0 0 1 0"/></filter>
+    <filter id="tint-noir" color-interpolation-filters="sRGB"><feColorMatrix values=".07 .24 .02 0 0  .065 .22 .02 0 0  .06 .2 .02 0 0  0 0 0 1 0"/></filter>
+  </svg>
+</section>
+
+<!-- ═══ FONCTIONNEMENT ═══ -->
+<section class="section" id="fonctionnement">
+  <div class="wrap">
+    <header class="section-head reveal">
+      <p class="label"><b>Fonctionnement</b> · de la photo à la vidéo</p>
+      <h2 class="display">Une mise en situation, sept gestes.</h2>
+      <p>Tout se fait sur le téléphone ou la tablette, à la caserne ou sur le site de manœuvre.</p>
+    </header>
+
+    <article class="step reveal">
+      <p class="step-no num" aria-hidden="true">01</p>
+      <div class="step-body">
+        <h3>La photo du lieu réel</h3>
+        <p>En <strong>Mode Terrain</strong>, vous photographiez le site avec l'appareil photo du téléphone ou de la tablette&nbsp;: la remise, la cage d'escalier, le parking de la caserne.</p>
+        <p>Vos stagiaires travaillent sur un endroit qu'ils connaissent, pas sur un décor générique.</p>
       </div>
-      <nav class="nav-links">
-        <a href="#features">Fonctionnalités</a>
-        <a href="#pricing">Tarifs</a>
-        <a href="#faq">FAQ</a>
-      </nav>
-      <div class="nav-cta">
-        <a href="#pricing" class="btn btn-primary">Acheter une licence</a>
+      <figure class="step-vis shot brackets" data-crop="330,60,1070,802">
+        <div class="world-crop"><img class="bg" src="assets/img/scene.webp" width="1600" height="1000" alt="Bâtiment d'entraînement cadré comme dans un viseur d'appareil photo (illustration provisoire)" loading="lazy"></div>
+        <figcaption class="label">Mode Terrain · illustration provisoire</figcaption>
+      </figure>
+    </article>
+
+    <article class="step step--wide reveal">
+      <p class="step-no num" aria-hidden="true">02</p>
+      <div class="step-body">
+        <h3>Les effets, posés sur la photo</h3>
+        <p>Quatre catégories d'éléments. Chacun se déplace, se tourne, s'agrandit, s'étire en largeur ou en hauteur, se retourne horizontalement ou verticalement, et se verrouille une fois en place.</p>
+        <p>Touchez un effet ci-dessous pour le voir animé.</p>
+      </div>
+      <div class="step-vis catalog" id="catalog">
+        <div>
+          <div class="cat-head"><h4>Feu</h4><span class="label num">7 effets animés</span></div>
+          <div class="cat-grid">
+            <button class="cell" type="button" aria-pressed="false" data-fx="fire-body"><img src="assets/fx/fire-body.poster.webp" width="300" height="278" alt="" loading="lazy"><span>Corps en feu</span></button>
+            <button class="cell" type="button" aria-pressed="false" data-fx="fire-door-1"><img src="assets/fx/fire-door-1.poster.webp" width="210" height="340" alt="" loading="lazy"><span>Porte en feu 1</span></button>
+            <button class="cell" type="button" aria-pressed="false" data-fx="fire-door-2"><img src="assets/fx/fire-door-2.poster.webp" width="167" height="340" alt="" loading="lazy"><span>Porte en feu 2</span></button>
+            <button class="cell" type="button" aria-pressed="false" data-fx="fire-ground-1"><img src="assets/fx/fire-ground-1.poster.webp" width="260" height="227" alt="" loading="lazy"><span>Feu au sol 1</span></button>
+            <button class="cell" type="button" aria-pressed="false" data-fx="fire-ground-2"><img src="assets/fx/fire-ground-2.poster.webp" width="300" height="239" alt="" loading="lazy"><span>Feu au sol 2</span></button>
+            <button class="cell" type="button" aria-pressed="false" data-fx="fire-window-1"><img src="assets/fx/fire-window-1.poster.webp" width="214" height="340" alt="" loading="lazy"><span>Fenêtre en feu 1</span></button>
+            <button class="cell" type="button" aria-pressed="false" data-fx="fire-window-2"><img src="assets/fx/fire-window-2.poster.webp" width="261" height="340" alt="" loading="lazy"><span>Fenêtre en feu 2</span></button>
+          </div>
+        </div>
+        <div>
+          <div class="cat-head"><h4>Fumée</h4><span class="label num">3 effets animés</span></div>
+          <div class="cat-grid">
+            <button class="cell" type="button" aria-pressed="false" data-fx="smoke-1"><img src="assets/fx/smoke-1.poster.webp" width="320" height="252" alt="" loading="lazy"><span>Panache 1</span></button>
+            <button class="cell" type="button" aria-pressed="false" data-fx="smoke-2"><img src="assets/fx/smoke-2.poster.webp" width="330" height="340" alt="" loading="lazy"><span>Panache 2</span></button>
+            <button class="cell" type="button" aria-pressed="false" data-fx="smoke-3"><img src="assets/fx/smoke-3.poster.webp" width="340" height="267" alt="" loading="lazy"><span>Panache 3</span></button>
+          </div>
+        </div>
+        <div>
+          <div class="cat-head"><h4>Explosions</h4><span class="label num">4 effets animés</span></div>
+          <div class="cat-grid">
+            <button class="cell" type="button" aria-pressed="false" data-fx="lightning-1"><img src="assets/fx/lightning-1.poster.webp" width="340" height="212" alt="" loading="lazy"><span>Éclair 1</span></button>
+            <button class="cell" type="button" aria-pressed="false" data-fx="lightning-2"><img src="assets/fx/lightning-2.poster.webp" width="340" height="226" alt="" loading="lazy"><span>Éclair 2</span></button>
+            <button class="cell" type="button" aria-pressed="false" data-fx="explosion-aerial"><img src="assets/fx/explosion-aerial.poster.webp" width="244" height="260" alt="" loading="lazy"><span>Explosion aérienne</span></button>
+            <button class="cell" type="button" aria-pressed="false" data-fx="explosion-night"><img src="assets/fx/explosion-night.poster.webp" width="340" height="248" alt="" loading="lazy"><span>Explosion nocturne</span></button>
+          </div>
+        </div>
+        <div>
+          <div class="cat-head"><h4>Personnel</h4><span class="label num">5 victimes illustrées</span></div>
+          <div class="cat-grid">
+            <div class="cell"><img src="assets/people/victim-male-back.webp" width="360" height="87" alt="Victime allongée" loading="lazy"><span>Victime</span></div>
+            <div class="cell"><img src="assets/people/victim-male-prone.webp" width="360" height="124" alt="Victime allongée, un bras écarté" loading="lazy"><span>Victime</span></div>
+            <div class="cell"><img src="assets/people/victim-male-standing.webp" width="360" height="86" alt="Victime allongée" loading="lazy"><span>Victime</span></div>
+            <div class="cell"><img src="assets/people/victim-female-prone.webp" width="135" height="349" alt="Victime debout, un bras levé" loading="lazy"><span>Victime</span></div>
+            <div class="cell"><img src="assets/people/victim-female-standing.webp" width="137" height="349" alt="Victime debout, un bras levé" loading="lazy"><span>Victime</span></div>
+          </div>
+          <p class="fine">La catégorie Personnel contient aussi des icônes simples&nbsp;: pompier, officier, médecin, échelle, lance, camion, ambulance.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="step reveal">
+      <p class="step-no num" aria-hidden="true">03</p>
+      <div class="step-body">
+        <h3>Le feu passe derrière le mur</h3>
+        <p>Un <strong>masque</strong> est une zone polygonale de 3 à 8 coins. Vous la remodelez en faisant glisser ses coins, et elle cache tout ce qui se trouve dessous.</p>
+        <p>Tracez-la sur un mur, un véhicule ou un encadrement de porte&nbsp;: l'effet semble brûler derrière.</p>
+      </div>
+      <div class="step-vis">
+        <figure class="shot" id="mask-shot" data-crop="780,380,680,510">
+          <div class="world-crop">
+            <img class="bg" src="assets/img/scene.webp" width="1600" height="1000" alt="Feu au sol placé derrière un muret (illustration provisoire)" loading="lazy">
+            <img class="fx" data-fx="fire-ground-2" src="assets/fx/fire-ground-2.poster.webp" alt="" loading="lazy" style="left:885px;top:431px;width:450px">
+            <div class="mask" style="clip-path:polygon(891px 684px,1321px 674px,1335px 690px,1345px 812px,905px 826px,900px 700px)" hidden></div>
+          </div>
+          <figcaption class="label" id="mask-shot-cap" aria-live="polite">Sans masque</figcaption>
+        </figure>
+        <div class="shot-ctl">
+          <button class="chip" type="button" id="mask-shot-toggle" aria-pressed="false"><span class="switch" aria-hidden="true"></span>Masque</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="step reveal">
+      <p class="step-no num" aria-hidden="true">04</p>
+      <div class="step-body">
+        <h3>L'eau au sol</h3>
+        <p>Une <strong>zone d'eau</strong> se trace comme un masque. Avec 4 coins, l'eau suit la perspective du sol.</p>
+        <p>Vous réglez la teinte, l'orientation et l'opacité&nbsp;: à 100&nbsp;%, l'eau est opaque et le sol disparaît.</p>
+      </div>
+      <div class="step-vis">
+        <figure class="shot" data-crop="100,560,1100,440" style="aspect-ratio:5/2">
+          <div class="world-crop"><img class="bg" src="assets/img/scene.webp" width="1600" height="1000" alt="Sol devant le bâtiment, recouvert d'une zone d'eau à quatre coins (illustration simplifiée)" loading="lazy"></div>
+          <div class="water" id="water"></div>
+          <svg class="water-edge" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+            <polygon points="22,58 80,54 100,96 4,100"/>
+          </svg>
+          <figcaption class="label">Illustration simplifiée de l'effet</figcaption>
+        </figure>
+        <div class="shot-ctl">
+          <label><span class="label">Opacité</span><input type="range" id="water-range" min="0" max="100" value="60" aria-describedby="water-out"><output class="label num" id="water-out" for="water-range">60&nbsp;%</output></label>
+        </div>
+      </div>
+    </article>
+
+    <article class="step reveal">
+      <p class="step-no num" aria-hidden="true">05</p>
+      <div class="step-body">
+        <h3>Le réglage de chaque effet</h3>
+        <p>Chaque effet a ses paramètres d'animation, et les changements s'appliquent en direct sur la photo.</p>
+        <p>Un panneau de calques fixe ce qui passe devant quoi. Annuler et rétablir sont disponibles à tout moment.</p>
+      </div>
+      <div class="step-vis">
+        <div class="tints">
+          <figure><img src="assets/fx/smoke-3.poster.webp" width="340" height="267" alt="Panache de fumée, teinte naturelle" loading="lazy"><figcaption class="label">Naturelle</figcaption></figure>
+          <figure><img src="assets/fx/smoke-3.poster.webp" width="340" height="267" alt="Panache de fumée teinté en vert" loading="lazy" style="filter:url(#tint-vert)"><figcaption class="label">Vert toxique</figcaption></figure>
+          <figure><img src="assets/fx/smoke-3.poster.webp" width="340" height="267" alt="Panache de fumée teinté en jaune" loading="lazy" style="filter:url(#tint-jaune)"><figcaption class="label">Jaune</figcaption></figure>
+        </div>
+        <dl class="sheet">
+          <div><dt>Vitesse</dt><dd>Ralentir ou accélérer l'animation.</dd></div>
+          <div><dt>Boucle</dt><dd>En continu, ou un nombre de répétitions choisi.</dd></div>
+          <div><dt>Délai de départ</dt><dd>L'effet démarre après quelques secondes.</dd></div>
+          <div><dt>Opacité</dt><dd>De visible à caché.</dd></div>
+          <div><dt>Filtre couleur</dt><dd>Colorise la fumée blanche. Les teintes s'enregistrent en préréglages réutilisables, par exemple «&nbsp;Vert toxique&nbsp;».</dd></div>
+        </dl>
+      </div>
+    </article>
+
+    <article class="step step--wide reveal">
+      <p class="step-no num" aria-hidden="true">06</p>
+      <div class="step-body">
+        <h3>Montrer, exporter, transmettre</h3>
+        <p>Chaque scène est enregistrée automatiquement dans la galerie de scénarios. Vous pouvez y ajouter des notes&nbsp;: décisions tactiques, risques, observations.</p>
+      </div>
+      <div class="step-vis formats">
+        <div class="format">
+          <p class="label">Vidéo animée</p>
+          <strong>MP4</strong>
+          <p class="label num">3 s · 5 s · 10 s — 60 images/s</p>
+          <p>La scène animée devient une vidéo, envoyée par le menu de partage du téléphone.</p>
+        </div>
+        <div class="format">
+          <p class="label">Fichier projet</p>
+          <strong>.mesp</strong>
+          <p class="label">Ré-importable dans PompierMES</p>
+          <p>Envoyez un scénario modifiable à un collègue formateur, qui l'ouvre et l'adapte dans son application.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="step step--wide reveal">
+      <p class="step-no num" aria-hidden="true">07</p>
+      <div class="step-vis offline">
+        <h3>Activée une fois.<br><em>Sans réseau</em> ensuite.</h3>
+        <ul class="facts">
+          <li><strong>Internet pour la première activation</strong><span>Ensuite, l'app vérifie la licence sur l'appareil, par cryptographie. Si une connexion est disponible, elle l'actualise en arrière-plan, sans rien demander.</span></li>
+          <li><strong>Vos photos restent sur l'appareil</strong><span>Photos, scénarios et exports ne sont pas envoyés. L'app transmet uniquement la clé de licence et l'identifiant Android de l'appareil, à l'activation et à l'actualisation.</span></li>
+          <li><strong>Ni compte, ni publicité, ni mesure d'audience</strong><span>Une clé de licence suffit. L'app est disponible en français et en anglais, avec un menu complet ou simplifié.</span></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ═══ TARIFS ═══ -->
+<section class="section" id="tarifs">
+  <div class="wrap">
+    <header class="section-head reveal">
+      <p class="label"><b>Tarifs</b> · licence par clé</p>
+      <h2 class="display">Une clé, un ou plusieurs appareils.</h2>
+    </header>
+    <div class="plans reveal">
+      <div class="plan">
+        <h3>Licence individuelle</h3>
+        <p class="price num">10&nbsp;€ <small>par appareil</small></p>
+        <ul>
+          <li>Paiement en ligne par Stripe</li>
+          <li>Clé envoyée automatiquement par e-mail</li>
+          <li>Licence à vie</li>
+          <li>Mises à jour incluses à vie</li>
+        </ul>
+        <a class="btn btn--hv" href="https://buy.stripe.com/9B628u1rA7mMeUN9IeafS00" rel="noopener">Acheter une licence</a>
+      </div>
+      <div class="plan">
+        <h3>Offre SDIS · parc d'appareils</h3>
+        <p class="price">Sur devis</p>
+        <ul>
+          <li>Une seule clé pour N appareils</li>
+          <li>Un parc entier de tablettes sous la même clé</li>
+          <li>Changement d'appareil en libre-service, dans l'app</li>
+        </ul>
+        <a class="btn" href="mailto:stanislas.sekelj@gmail.com?subject=Demande%20de%20devis%20MESP">Demander un devis</a>
       </div>
     </div>
-  </header>
+    <p class="fine reveal">Une licence pour N appareils autorise N changements d'appareil. L'application s'installe depuis Google Play, puis s'active avec la clé.</p>
+  </div>
+</section>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="container hero-container">
-      <div class="hero-content">
-        <span class="badge">Disponible sur Android</span>
-        <h1>L'entraînement pompier.</h1>
-        <p class="hero-subtitle">
-          MESP est l'application d'entraînement conçue pour les sapeurs-pompiers. Simulez, analysez et progressez, même en situation d'urgence et sans connexion internet.
-        </p>
-        <div class="hero-actions">
-          <a href="#pricing" class="btn btn-primary btn-large">Obtenir des clés de licence</a>
-          <a href="https://play.google.com/store" target="_blank" class="btn btn-secondary btn-large">
-            <span class="play-icon">🤖</span> Télécharger sur Google Play
-          </a>
-        </div>
-      </div>
-      <div class="hero-image-container">
-        <!-- Conteneur pour afficher une capture d'écran de l'app ou le logo en grand -->
-        <div class="app-mockup">
-          <img src="logo.png" alt="MESP Logo Large" class="hero-app-logo">
-          <div class="mockup-overlay">MESP App</div>
-        </div>
-      </div>
+<!-- ═══ FAQ ═══ -->
+<section class="section" id="faq">
+  <div class="wrap faq-layout">
+    <header class="section-head reveal">
+      <p class="label"><b>FAQ</b> · licence, réseau, données</p>
+      <h2 class="display">Questions fréquentes</h2>
+    </header>
+    <div class="faq reveal">
+      <details>
+        <summary>Comment obtenir une clé de licence&nbsp;?</summary>
+        <div><p>Pour une licence individuelle, le paiement se fait en ligne par Stripe et la clé vous est envoyée automatiquement par e-mail. Pour un SDIS ou un parc d'appareils, demandez un devis&nbsp;: vous recevez une seule clé qui couvre le nombre d'appareils convenu.</p></div>
+      </details>
+      <details>
+        <summary>Comment activer l'application&nbsp;?</summary>
+        <div><p>Installez PompierMES depuis Google Play, puis saisissez votre clé, au format <strong class="mono">PMES-XXXX-XXXX-XXXX</strong>. Cette première activation demande une connexion Internet.</p></div>
+      </details>
+      <details>
+        <summary>L'application fonctionne-t-elle sans réseau&nbsp;?</summary>
+        <div><p>Oui. Une fois la licence activée, tout fonctionne hors ligne&nbsp;: photo, effets, masques, export. L'app vérifie la licence localement, par cryptographie. Quand une connexion est disponible, elle actualise la licence en arrière-plan.</p></div>
+      </details>
+      <details>
+        <summary>Comment changer d'appareil&nbsp;?</summary>
+        <div><p>Vous le faites vous-même, dans l'app&nbsp;: <strong>Paramètres → Gestion de la licence → désactiver</strong>. L'emplacement est libéré et la clé peut être activée sur le nouvel appareil. La désactivation demande une connexion Internet.</p><p>Le nombre de changements est limité&nbsp;: une licence pour N appareils autorise N changements.</p></div>
+      </details>
+      <details>
+        <summary>Quelles données quittent l'appareil&nbsp;?</summary>
+        <div><p>Deux seulement&nbsp;: la clé de licence et l'identifiant Android de l'appareil, lors de l'activation et de l'actualisation de la licence. Vos photos, scénarios et exports restent sur l'appareil. Il n'y a ni publicité, ni mesure d'audience, ni compte à créer. Le détail figure dans la <a href="confidentialite.html">politique de confidentialité</a>.</p></div>
+      </details>
+      <details>
+        <summary>Existe-t-il une version iPhone ou iPad&nbsp;?</summary>
+        <div><p>Non. MESP fonctionne sur Android uniquement, sur téléphone et sur tablette.</p></div>
+      </details>
+      <details>
+        <summary>Peut-on équiper plusieurs tablettes avec la même clé&nbsp;?</summary>
+        <div><p>Oui. Une clé de licence couvre un nombre d'appareils défini, d'un seul à un parc complet de tablettes.</p></div>
+      </details>
+      <details>
+        <summary>MESP est-il un outil d'intervention&nbsp;?</summary>
+        <div><p>Non. MESP est un outil de formation&nbsp;: il sert à préparer et à présenter des mises en situation. Ce n'est ni un outil d'intervention en temps réel, ni un outil de cartographie, et il n'est certifié ou homologué par aucune autorité.</p></div>
+      </details>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Features Section -->
-  <section id="features" class="features">
-    <div class="container">
-      <div class="section-header">
-        <h2>Conçu pour le terrain</h2>
-        <p>Une technologie robuste et simple pour répondre aux exigences des pompiers.</p>
-      </div>
-      
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon">📷</div>
-          <h3>Mode Capture Photo</h3>
-          <p>Prenez des photos de vos zones de manœuvre et intégrez-les directement dans vos scénarios d'entraînement.</p>
-        </div>
-        
-        <div class="feature-card">
-          <div class="feature-icon">☁️</div>
-          <h3>Fonctionnement Hors-Ligne</h3>
-          <p>Pas de réseau en sous-sol ou en forêt ? Aucun problème. L'application valide vos licences 100% hors-ligne après activation.</p>
-        </div>
-        
-        <div class="feature-card">
-          <div class="feature-icon">🔑</div>
-          <h3>Gestion de Flotte B2B</h3>
-          <p>Les SDIS peuvent acheter des lots de licences (ex: 20, 50 tablettes) avec une seule clé d'activation et gérer leur parc facilement.</p>
-        </div>
-      </div>
+<!-- ═══ CONTACT ═══ -->
+<section class="section" id="contact">
+  <div class="wrap contact reveal">
+    <div style="display:grid;gap:18px">
+      <p class="label"><b>Contact</b> · devis et assistance</p>
+      <h2 class="display">Un devis, une question&nbsp;?</h2>
+      <p>Écrivez-nous pour un devis SDIS ou pour toute question sur votre licence.</p>
+      <p><a href="mailto:stanislas.sekelj@gmail.com">stanislas.sekelj@gmail.com</a></p>
     </div>
-  </section>
-
-  <!-- Pricing Section -->
-  <section id="pricing" class="pricing">
-    <div class="container">
-      <div class="section-header">
-        <h2>Des tarifs simples et transparents</h2>
-        <p>Activez vos tablettes de manière autonome en quelques minutes.</p>
-      </div>
-
-      <div class="pricing-grid">
-        <!-- Offre Individuelle -->
-        <div class="price-card">
-          <div class="card-badge">Populaire</div>
-          <h3>Licence Individuelle</h3>
-          <div class="price">10<span>€</span><span class="price-period">/ tablette</span></div>
-          <p class="price-desc">Idéal pour les pompiers individuels souhaitant s'entraîner sur leur tablette personnelle.</p>
-          <hr>
-          <ul class="price-features">
-            <li><strong>1 Clé d'activation</strong> unique</li>
-            <li>Valable pour <strong>1 appareil</strong></li>
-            <li>Mises à jour gratuites à vie</li>
-            <li>Fonctionnement 100% hors-ligne</li>
-            <li>Support par e-mail</li>
-          </ul>
-          <!-- REMPLACER PAR VOTRE LIEN DE PAIEMENT STRIPE REEL -->
-          <a href="https://buy.stripe.com/9B628u1rA7mMeUN9IeafS00" target="_blank" class="btn btn-primary btn-full">Acheter une clé</a>
-        </div>
-
-        <!-- Offre SDIS (Lots) -->
-        <div class="price-card price-card-sdis">
-          <h3>Offre SDIS / Groupements</h3>
-          <div class="price">Sur mesure</div>
-          <p class="price-desc">Pour équiper les casernes ou l'ensemble d'un département avec une gestion centralisée.</p>
-          <hr>
-          <ul class="price-features">
-            <li><strong>1 Clé unique</strong> pour toute votre flotte</li>
-            <li>Volume ajustable (ex: 10, 50, 100 tablettes)</li>
-            <li>Transfert de licence en cas de matériel cassé</li>
-            <li>Support technique prioritaire</li>
-          </ul>
-          <a href="mailto:contact@votre-domaine.fr?subject=Demande de devis MESP SDIS" class="btn btn-secondary btn-full">Demander un devis</a>
-        </div>
-      </div>
+    <div class="store">
+      <a href="https://play.google.com/store/apps/details?id=com.pompiermes.app" rel="noopener"><img src="assets/img/google-play-badge-fr.png" width="646" height="250" alt="Disponible sur Google Play" loading="lazy"></a>
+      <small>Google Play et le logo Google Play sont des marques de Google LLC.</small>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- FAQ Section -->
-  <section id="faq" class="faq">
-    <div class="container">
-      <div class="section-header">
-        <h2>Questions Fréquentes</h2>
-        <p>Tout ce que vous devez savoir sur le fonctionnement des licences de MESP.</p>
-      </div>
+</main>
 
-      <div class="faq-list">
-        <div class="faq-item">
-          <h4>Comment fonctionne l'activation ?</h4>
-          <p>Après votre paiement sur Stripe, vous recevrez immédiatement une clé d'activation par e-mail. Saisissez cette clé au démarrage de l'application sur votre tablette connectée à internet pour la déverrouiller définitivement.</p>
-        </div>
+<footer class="site-foot">
+  <div class="wrap">
+    <a class="brand" href="./" aria-label="MESP — accueil"><strong>MESP</strong><span>PompierMES</span></a>
+    <p>Outil de formation pour sapeurs-pompiers. MESP n'est pas un outil d'intervention et n'est certifié par aucune autorité.</p>
+    <nav class="foot-nav" aria-label="Liens de pied de page">
+      <a href="confidentialite.html">Confidentialité</a>
+      <a href="confidentialite.html#suppression">Suppression des données</a>
+      <a href="mentions-legales.html">Mentions légales</a>
+      <a href="https://play.google.com/store/apps/details?id=com.pompiermes.app" rel="noopener">Google Play</a>
+    </nav>
+    <p>Ce site n'utilise ni cookies, ni traceurs, ni mesure d'audience.</p>
+  </div>
+</footer>
 
-        <div class="faq-item">
-          <h4>L'application a-t-elle besoin d'internet en permanence ?</h4>
-          <p>Non. MESP est conçue pour le terrain. Internet est nécessaire uniquement pour la première activation. Ensuite, l'application valide la licence localement de façon cryptographique et reste opérationnelle 100% hors-ligne.</p>
-        </div>
-
-        <div class="faq-item">
-          <h4>Que se passe-t-il si ma tablette est cassée ou remplacée ?</h4>
-          <p>Les licences sont transférables. Il vous suffit de nous contacter ou d'utiliser le portail d'administration pour détacher la licence de l'ancienne tablette afin de pouvoir l'activer sur la nouvelle.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container footer-container">
-      <div class="footer-brand">
-        <span class="brand-name">MESP</span>
-        <p>L'application d'entraînement tactique pour sapeurs-pompiers.</p>
-      </div>
-      <div class="footer-copy">
-        &copy; 2026 MESP. Tous droits réservés.
-      </div>
-    </div>
-  </footer>
-
+<script src="js/site.js" defer></script>
 </body>
 </html>
